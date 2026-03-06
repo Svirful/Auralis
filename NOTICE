@@ -1,0 +1,23 @@
+Auralis
+Copyright 2026 Auralis
+
+This product is licensed under the Apache License, Version 2.0.
+You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+The name "Auralis" and associated logos are trademarks of Auralis.
+Use of these trademarks is not granted by this license and requires
+separate written permission.
+
+---
+
+This software includes code originally developed by Google LLC,
+licensed under the Apache License, Version 2.0:
+
+  Portions of src/lib/genai-live-client.ts
+  Portions of src/lib/audio-recorder.ts
+  Portions of src/lib/audio-streamer.ts
+  Portions of src/hooks/use-live-api.ts
+  Portions of src/contexts/LiveAPIContext.tsx
+
+  Copyright 2024 Google LLC
+  http://www.apache.org/licenses/LICENSE-2.0

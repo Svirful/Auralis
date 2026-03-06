@@ -1,0 +1,78 @@
+# Dependencies
+/node_modules
+
+# Electron builder cache
+.cache/
+
+# Supabase local state (contains project refs and other internal IDs)
+supabase/
+
+# Internal / proprietary docs — not for public repo
+Auralis Product Vision_ The AI Work Companion.md
+AuralisProductDescription.md
+ToDo.md
+
+# Google App Engine deploy config (web backend, not this project)
+app.yaml
+
+# Production build output
+/build
+/dist
+
+# Electron builder artifacts
+/release
+*.dmg
+*.exe
+*.AppImage
+*.snap
+*.deb
+*.rpm
+*.zip
+*.tar.gz
+
+# Environment variables — never commit secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Certificates & keys
+*.pem
+*.p12
+*.key
+*.crt
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Testing
+/coverage
+
+# TypeScript incremental build
+*.tsbuildinfo
+
+# Yarn
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions

@@ -1,0 +1,120 @@
+@import "../../App.scss";
+
+.connection-error-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.connection-error-modal {
+    width: 90%;
+    max-width: 480px;
+    background: var(--surface-glass);
+    backdrop-filter: var(--blur-md);
+    -webkit-backdrop-filter: var(--blur-md);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    animation: modalPop 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    text-align: center;
+
+    .error-icon {
+        font-size: 4rem;
+        color: var(--red-500);
+        background: rgba(239, 68, 68, 0.1);
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 24px;
+        margin-bottom: 0.5rem;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: white;
+    }
+
+    p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .modal-actions {
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+        margin-top: 1rem;
+
+        button {
+            flex: 1;
+            height: 48px;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+
+            &.close-btn {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                color: white;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.1);
+                    border-color: rgba(255, 255, 255, 0.2);
+                }
+            }
+
+            &.settings-btn {
+                background: white;
+                color: black;
+                border: none;
+
+                &:hover {
+                    background: #f0f0f0;
+                    transform: translateY(-2px);
+                    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+    }
+}
+
+/* fadeIn defined in App.scss */
+
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}

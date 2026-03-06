@@ -1,0 +1,83 @@
+.auralis-voice-circle-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vmin; // Responsive size
+    height: 40vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    &.active {
+        opacity: 1;
+    }
+
+    .auralis-voice-circle {
+        position: absolute;
+        width: 25vmin;
+        height: 25vmin;
+        background: radial-gradient(circle, #a5c9ff 0%, var(--blue-500) 40%, transparent 75%);
+        border-radius: 50%;
+        filter: blur(20px); // Less blur for more definition
+        transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+        z-index: 2;
+        box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+    }
+
+    .auralis-voice-circle-glow {
+        position: absolute;
+        width: 35vmin;
+        height: 35vmin;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent 70%);
+        border-radius: 50%;
+        animation: auralis-glow 6s infinite ease-in-out;
+        filter: blur(40px);
+        z-index: 1;
+    }
+
+    /* Add a third layer for inner core */
+    &:after {
+        content: "";
+        position: absolute;
+        width: 8vmin;
+        height: 8vmin;
+        background: rgba(255, 255, 255, 0.4); // Brighter core
+        border-radius: 50%;
+        filter: blur(5px);
+        z-index: 3;
+        animation: core-pulse 2s infinite ease-in-out;
+    }
+}
+
+@keyframes auralis-glow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 0.5;
+    }
+}
+
+@keyframes core-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0.9;
+    }
+}

@@ -1,0 +1,272 @@
+.stats-tab {
+    padding: 1.5rem 2rem;
+    height: 100%;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+.stats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stats-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.stats-card-primary {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(168, 85, 247, 0.05)) !important;
+    border: 1px solid rgba(59, 130, 246, 0.15) !important;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.12), transparent 70%);
+        pointer-events: none;
+    }
+}
+
+.stats-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.stats-icon {
+    font-size: 1.1rem;
+    color: var(--blue-400);
+    opacity: 0.9;
+}
+
+.stats-label {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.stats-value-container {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.stats-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(to bottom, #ffffff, #a1a1a1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+.stats-unit {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+}
+
+.stats-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stats-status .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    &.active {
+        background: var(--green-500);
+        box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+        animation: pulse-green 2s infinite;
+    }
+
+    &.inactive {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes pulse-green {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.status-text {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+    font-weight: 500;
+}
+
+.stats-card-info {
+    .stats-icon {
+        color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+.stats-description {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.inline-link {
+    background: none;
+    border: none;
+    color: var(--blue-400);
+    cursor: pointer;
+    font-size: inherit;
+    padding: 0;
+    text-decoration: underline;
+    text-decoration-color: rgba(59, 130, 246, 0.3);
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
+
+    &:hover {
+        color: var(--blue-300, #93bbfd);
+        text-decoration-color: var(--blue-400);
+    }
+}
+
+// Secondary card (quota usage)
+.stats-card-secondary {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.06), rgba(59, 130, 246, 0.04)) !important;
+    border: 1px solid rgba(168, 85, 247, 0.12) !important;
+}
+
+// Quota progress bars
+.quota-row {
+    margin-bottom: 0.75rem;
+}
+
+.quota-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+}
+
+.quota-icon {
+    font-size: 0.85rem !important;
+    opacity: 0.7;
+}
+
+.quota-numbers {
+    margin-left: auto;
+    font-variant-numeric: tabular-nums;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.7rem;
+}
+
+.quota-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.quota-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+
+    &.voice {
+        background: linear-gradient(90deg, #3b82f6, #6366f1);
+    }
+
+    &.vision {
+        background: linear-gradient(90deg, #a855f7, #ec4899);
+    }
+}
+
+.stats-tier {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+
+    strong {
+        color: rgba(255, 255, 255, 0.7);
+    }
+}
+
+// Warning card (quota exceeded)
+.stats-card-warning {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(239, 68, 68, 0.05)) !important;
+    border: 1px solid rgba(245, 158, 11, 0.2) !important;
+
+    .stats-icon {
+        color: var(--amber-500);
+    }
+}
+
+.upgrade-button {
+    margin-top: 0.75rem;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+    }
+}

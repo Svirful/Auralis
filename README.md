@@ -4,7 +4,7 @@ A desktop AI voice assistant powered by the [Gemini Live API](https://ai.google.
 
 Built with Electron + React + TypeScript. No backend required. Your API key stays on your machine.
 
-![Auralis UI](public/logo512.png)
+![Auralis UI](public/Demonstration.png)
 
 ---
 
